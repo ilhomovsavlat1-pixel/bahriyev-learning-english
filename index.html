@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090909">
+  <meta name="description" content="Bahriyev Learning English — ingliz tilini maqsad bilan o‘rganing. Kurslar va ro‘yxatdan o‘tish haqida ma’lumot oling.">
+  <title>Bahriyev Learning English | Ingliz tilini maqsad bilan o‘rganing</title>
+  <style>
+    :root{--bg:#090909;--panel:#111;--line:#292929;--text:#f5f2eb;--muted:#b4b0a8;--accent:#e8d7b5;--max:1180px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6}
+    a{color:inherit;text-decoration:none}button,input,textarea{font:inherit}
+    .wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+    header{position:sticky;top:0;z-index:20;background:rgba(9,9,9,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px;min-width:max-content}
+    .brand-mark{font-family:Georgia,serif;font-size:42px;line-height:1;color:var(--accent);border-right:1px solid #514a3f;padding-right:12px}
+    .brand-name{font-size:12px;letter-spacing:.22em;font-weight:700}.brand-name small{display:block;font-size:9px;letter-spacing:.32em;color:var(--muted);margin-top:3px}
+    .navlinks{display:flex;align-items:center;gap:25px;font-size:12px;color:#ddd}
+    .navlinks a:hover,.footer-links a:hover{color:var(--accent)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:1px solid var(--accent);background:var(--accent);color:#111;padding:12px 19px;border-radius:999px;font-size:12px;font-weight:750;transition:.2s;cursor:pointer}
+    .btn:hover{transform:translateY(-2px);filter:brightness(1.07)}.btn.ghost{background:transparent;color:var(--text);border-color:#666}
+    .menu{display:none;background:transparent;color:white;border:1px solid var(--line);padding:8px 12px;border-radius:8px}
+    .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);min-height:570px;display:flex;align-items:center}
+    .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#090909 0%,rgba(9,9,9,.94) 34%,rgba(9,9,9,.65) 65%,rgba(9,9,9,.72)),url("https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1800&q=85") center/cover;opacity:.82}
+    .hero-inner{position:relative;z-index:1;padding:86px 0 90px;max-width:730px}
+    .eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:.25em;color:var(--accent);font-weight:750}
+    h1,h2,h3,p{margin-top:0}h1,h2,.serif{font-family:Georgia,"Times New Roman",serif;font-weight:400;letter-spacing:-.035em}
+    h1{font-size:clamp(48px,7vw,82px);line-height:.99;margin:20px 0 22px;max-width:760px}
+    .hero p{max-width:570px;color:#d0cdc6;font-size:16px;margin-bottom:28px}.actions{display:flex;flex-wrap:wrap;gap:12px}
+    .hero-note{display:flex;align-items:center;gap:12px;color:var(--muted);font-size:11px;margin-top:40px}.hero-note:before{content:"";width:34px;height:1px;background:var(--accent)}
+    section{padding:88px 0;border-bottom:1px solid var(--line)}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:34px}
+    h2{font-size:clamp(34px,4.5vw,52px);line-height:1.05;margin:12px 0}
+    .section-head p,.muted{color:var(--muted);max-width:470px;margin-bottom:4px;font-size:14px}
+    .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .course{border:1px solid var(--line);background:linear-gradient(145deg,#141414,#0c0c0c);padding:25px 22px;min-height:240px;display:flex;flex-direction:column;transition:.25s}
+    .course:hover{border-color:#82765f;transform:translateY(-4px)}
+    .course-num{font-size:11px;color:var(--accent);letter-spacing:.16em}.course h3{font-family:Georgia,serif;font-size:25px;font-weight:400;margin:24px 0 10px}
+    .course p{font-size:13px;color:var(--muted);margin-bottom:24px}.course a{font-size:12px;color:var(--accent);margin-top:auto}
+    .values{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+    .value{border-top:1px solid #5a5142;padding-top:22px}.value .symbol{font-size:24px;color:var(--accent)}.value h3{font-size:18px;margin:13px 0 8px}.value p{color:var(--muted);font-size:13px;margin:0}
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+    .about-visual{min-height:390px;background:linear-gradient(0deg,rgba(0,0,0,.35),rgba(0,0,0,.15)),url("https://images.unsplash.com/photo-1524177910225-8c5f4a7d1b11?auto=format&fit=crop&w=1200&q=85") center/cover;border:1px solid var(--line);position:relative}
+    .about-visual:after{content:"BAHRIYEV LEARNING ENGLISH";position:absolute;bottom:18px;left:18px;font-size:10px;letter-spacing:.2em;background:#090909d9;padding:12px 14px}
+    .about-copy p{color:var(--muted);font-size:14px}.about-copy .btn{margin-top:10px}
+    .cta{background:var(--accent);color:#111;padding:48px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+    .cta .eyebrow{color:#5e513e}.cta h2{font-size:clamp(30px,4vw,44px);max-width:640px;margin-bottom:8px}.cta p{color:#443d32;margin-bottom:0;font-size:13px}.cta .btn{background:#111;color:white;border-color:#111;white-space:nowrap}
+    .contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px}
+    .contact-info{display:grid;gap:22px;margin-top:28px}.contact-item{border-bottom:1px solid var(--line);padding-bottom:16px}.contact-item small{display:block;color:var(--muted);font-size:11px;margin-bottom:5px}.contact-item strong{font-size:14px;font-weight:500}
+    form{border:1px solid var(--line);background:#0e0e0e;padding:26px;display:grid;gap:14px}
+    label{font-size:11px;color:var(--muted)}input,textarea{display:block;width:100%;margin-top:7px;padding:13px 14px;color:white;background:#080808;border:1px solid #333;outline:none;border-radius:2px}
+    input:focus,textarea:focus{border-color:var(--accent)}textarea{min-height:105px;resize:vertical}form .btn{width:100%;margin-top:4px}
+    .form-note{font-size:11px;color:var(--muted);margin:0}
+    footer{padding:28px 0;color:var(--muted);font-size:11px}.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}.footer-links{display:flex;gap:18px}
+    .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s}.reveal.visible{opacity:1;transform:none}
+
+    /* Premium motion: subtle, smooth, and respectful of reduced-motion settings */
+    html { scroll-behavior: smooth; }
+    body { overflow-x: hidden; }
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 420px; height: 420px;
+      right: 5%; top: 4%;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(23,105,255,.16) 0%, rgba(23,105,255,.055) 38%, transparent 70%);
+      filter: blur(10px);
+      pointer-events: none;
+      animation: blueBreath 8s ease-in-out infinite alternate;
+    }
+    .hero-inner { animation: heroEnter 1s cubic-bezier(.2,.75,.25,1) both; }
+    .hero .eyebrow { animation: heroEnter .8s .08s both; }
+    .hero h1 { animation: heroEnter .95s .16s both; }
+    .hero p { animation: heroEnter .95s .28s both; }
+    .hero .actions { animation: heroEnter .95s .4s both; }
+    .hero-note { animation: heroEnter .95s .52s both; }
+    .brand-mark { transition: transform .35s ease, color .35s ease; }
+    .brand:hover .brand-mark { transform: rotate(-7deg) scale(1.05); color: #fff; }
+    .btn { box-shadow: 0 0 0 rgba(23,105,255,0); }
+    .btn:hover { box-shadow: 0 8px 28px rgba(23,105,255,.22); }
+    .course, .value, .contact-item, .about-visual { will-change: transform; }
+    .course { transition: transform .35s cubic-bezier(.2,.75,.25,1), border-color .35s, box-shadow .35s; }
+    .course:hover { box-shadow: 0 18px 40px rgba(0,0,0,.24); }
+    .course a { display: inline-flex; transition: transform .25s ease, color .25s ease; }
+    .course:hover a { transform: translateX(4px); color: #fff; }
+    .value { transition: transform .35s ease, border-color .35s ease; }
+    .value:hover { transform: translateY(-4px); border-color: #1769ff; }
+    .about-visual { overflow: hidden; }
+    .about-visual::before { transition: opacity .5s ease; }
+    .about-visual:hover { transform: translateY(-3px); transition: transform .4s ease; }
+    .cta { position: relative; overflow: hidden; }
+    .cta::after { content:""; position:absolute; width:160px; height:160px; right:-35px; top:-60px; border:1px solid rgba(17,17,17,.14); border-radius:50%; box-shadow:0 0 0 22px rgba(17,17,17,.035),0 0 0 44px rgba(17,17,17,.025); pointer-events:none; }
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .75s ease, transform .75s cubic-bezier(.2,.75,.25,1); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    @keyframes heroEnter { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes blueBreath { from { transform:scale(.88); opacity:.55; } to { transform:scale(1.08); opacity:1; } }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+
+    @media(max-width:900px){.navlinks{gap:14px}.navlinks a{font-size:11px}.grid{grid-template-columns:repeat(2,1fr)}.about{gap:30px}.contact-grid{gap:30px}}
+    @media(max-width:700px){.wrap{width:min(100% - 30px,var(--max))}.nav{height:68px}.menu{display:block}.navlinks{display:none;position:absolute;top:68px;left:0;right:0;background:#0b0b0b;border-bottom:1px solid var(--line);padding:20px;flex-direction:column;align-items:stretch}.navlinks.open{display:flex}.navlinks a{padding:5px 0;font-size:13px}.nav .nav-cta{display:none}.hero{min-height:570px}.hero-inner{padding:72px 0}.hero p{font-size:14px}section{padding:65px 0}.section-head{display:block}.section-head p{margin-top:14px}.grid{grid-template-columns:1fr 1fr;gap:9px}.course{padding:18px 15px;min-height:230px}.course h3{font-size:21px}.values{grid-template-columns:1fr;gap:24px}.about{grid-template-columns:1fr}.about-visual{min-height:270px;order:2}.cta{padding:28px;display:block}.cta .btn{margin-top:22px}.contact-grid{grid-template-columns:1fr;gap:30px}.footer-inner{align-items:flex-start;flex-direction:column}.footer-links{flex-wrap:wrap}}
+    @media(max-width:390px){.brand-name{font-size:10px}.brand-mark{font-size:35px}.grid{grid-template-columns:1fr}.course{min-height:190px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}*{transition:none!important}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#home" aria-label="Bahriyev Learning English bosh sahifa">
+      <span class="brand-mark">B</span><span class="brand-name">BAHRIYEV<small>LEARNING ENGLISH</small></span>
+    </a>
+    <nav class="navlinks" id="navlinks" aria-label="Asosiy navigatsiya">
+      <a href="#home">Bosh sahifa</a><a href="#courses">Kurslar</a><a href="#approach">Yondashuv</a><a href="#about">Biz haqimizda</a><a href="#contact">Aloqa</a>
+    </nav>
+    <a class="btn nav-cta" href="#contact">Konsultatsiya olish ↗</a>
+    <button class="menu" id="menu" aria-label="Menyuni ochish" aria-expanded="false">Menyu ☰</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="wrap hero-inner">
+      <div class="eyebrow">Ingliz tili • Yangi imkoniyatlar</div>
+      <h1>Ingliz tilini<br><span style="color:var(--accent)">maqsad bilan</span> o‘rganing.</h1>
+      <p>Bahriyev Learning English — bilim, ishonch va izchil rivojlanish sari qadam. O‘zingiz uchun mos o‘quv yo‘lini toping.</p>
+      <div class="actions"><a class="btn" href="#courses">Kurslarni ko‘rish ↗</a><a class="btn ghost" href="#about">Biz bilan tanishing</a></div>
+      <div class="hero-note">Katta maqsadlar kichik, izchil qadamlardan boshlanadi.</div>
+    </div>
+  </section>
+
+  <section id="courses">
+    <div class="wrap">
+      <div class="section-head reveal"><div><div class="eyebrow">Ta’lim yo‘nalishlari</div><h2>Sizning maqsadingiz.<br>O‘zingizga mos kurs.</h2></div><p>Quyidagi kurs nomlari demo uchun berilgan. Markazdagi haqiqiy yo‘nalishlar va darajalar bilan almashtiring.</p></div>
+      <div class="grid">
+        <article class="course reveal"><div class="course-num">01 / FOUNDATION</div><h3>General English</h3><p>Kundalik muloqot, grammatika va lug‘at boyligini bosqichma-bosqich rivojlantirish.</p><a href="#contact">Kurs haqida so‘rash ↗</a></article>
+        <article class="course reveal"><div class="course-num">02 / EXAM PREP</div><h3>IELTS Preparation</h3><p>Imtihon formatini o‘rganish va Listening, Reading, Writing hamda Speaking ko‘nikmalarini mashq qilish.</p><a href="#contact">Kurs haqida so‘rash ↗</a></article>
+        <article class="course reveal"><div class="course-num">03 / CERTIFICATE</div><h3>CEFR Preparation</h3><p>Maqsadli tayyorgarlik, muntazam amaliyot va darajaga mos o‘quv reja.</p><a href="#contact">Kurs haqida so‘rash ↗</a></article>
+        <article class="course reveal"><div class="course-num">04 / SPEAKING</div><h3>Speaking Club</h3><p>Fikrni ingliz tilida erkinroq ifodalash va suhbat tajribasini oshirish uchun amaliy mashg‘ulotlar.</p><a href="#contact">Kurs haqida so‘rash ↗</a></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="approach">
+    <div class="wrap">
+      <div class="section-head reveal"><div><div class="eyebrow">Bizning yondashuv</div><h2>Ta’limga jiddiy.<br>Natijaga yo‘naltirilgan.</h2></div><p>Saytning ushbu qismi markazning haqiqiy ta’lim uslubi, ustozlari va o‘quv jarayonini tushuntirish uchun mo‘ljallangan.</p></div>
+      <div class="values">
+        <article class="value reveal"><div class="symbol">✳</div><h3>Aniq maqsad</h3><p>O‘quvchining maqsadini aniqlash va unga mos yo‘nalishni tanlash.</p></article>
+        <article class="value reveal"><div class="symbol">↗</div><h3>Izchil rivojlanish</h3><p>Muntazam mashg‘ulotlar, amaliyot va taraqqiyotni kuzatib borish.</p></article>
+        <article class="value reveal"><div class="symbol">◇</div><h3>Qo‘llab-quvvatlash</h3><p>Savollar berish, xatolar ustida ishlash va o‘rganishni davom ettirish uchun muhit.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap about">
+      <div class="about-visual reveal" role="img" aria-label="Ta’lim muhitini ifodalovchi surat"></div>
+      <div class="about-copy reveal"><div class="eyebrow">Bahriyev Learning English</div><h2>Har bir katta natija birinchi qadamdan boshlanadi.</h2><p>Biz haqimizda bo‘limiga markaz tarixi, asoschining maqsadi, ustozlar tajribasi va o‘quvchilarga beriladigan imkoniyatlar haqida aniq ma’lumot kiriting.</p><p>Haqiqiy yutuqlar, sertifikatlar va o‘quvchilar fikrlarini ruxsat bilan qo‘shish brendga bo‘lgan ishonchni oshiradi.</p><a class="btn ghost" href="#contact">Savol bermoqchimisiz? ↗</a></div>
+    </div>
+  </section>
+
+  <section style="padding:34px 0;border-bottom:0">
+    <div class="wrap"><div class="cta reveal"><div><div class="eyebrow">Birinchi qadamni bugun qo‘ying</div><h2>Ingliz tili bo‘yicha maqsadingizni aniqlaylik.</h2><p>Kurslar, jadval va qabul haqida ma’lumot olish uchun biz bilan bog‘laning.</p></div><a class="btn" href="#contact">Bog‘lanish ↗</a></div></div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap contact-grid">
+      <div class="reveal"><div class="eyebrow">Aloqa</div><h2>Keling,<br>gaplashamiz.</h2><p class="muted">Kurslar va qabul bo‘yicha savolingiz bormi? Ma’lumotlaringizni qoldiring yoki quyidagi aloqa ma’lumotlaridan foydalaning.</p>
+        <div class="contact-info">
+          <div class="contact-item"><small>TELEFON</small><strong data-phone>Telefon raqami qo‘shiladi</strong></div>
+          <div class="contact-item"><small>TELEGRAM</small><strong data-telegram>Telegram manzili qo‘shiladi</strong></div>
+          <div class="contact-item"><small>MANZIL</small><strong data-address>Markaz manzili qo‘shiladi</strong></div>
+        </div>
+      </div>
+      <form id="contactForm" class="reveal">
+        <div><label for="name">Ismingiz</label><input id="name" name="name" autocomplete="name" placeholder="Ismingizni kiriting" required></div>
+        <div><label for="phone">Telefon raqamingiz</label><input id="phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="+998 __ ___ __ __" required></div>
+        <div><label for="message">Qaysi kurs sizni qiziqtiradi?</label><textarea id="message" name="message" placeholder="Masalan, IELTS yoki General English"></textarea></div>
+        <button class="btn" type="submit">Telegram orqali yuborish ↗</button>
+        <p class="form-note" id="formNote">Yuborish tugmasi Telegram xabarini tayyorlaydi. Ishga tushirishdan oldin markazning Telegram username’ini kodga kiriting.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap footer-inner"><a class="brand" href="#home"><span class="brand-mark" style="font-size:30px">B</span><span class="brand-name">BAHRIYEV<small>LEARNING ENGLISH</small></span></a><span>© <span id="year"></span> Bahriyev Learning English. Barcha huquqlar himoyalangan.</span><div class="footer-links"><a href="#courses">Kurslar</a><a href="#about">Biz haqimizda</a><a href="#contact">Aloqa</a></div></div></footer>
+
+<script>
+  // ISHGA TUSHIRISHDAN OLDIN: pastdagi username va aloqa ma’lumotlarini haqiqiy ma’lumotlar bilan almashtiring.
+  const TELEGRAM_USERNAME = "YOUR_TELEGRAM_USERNAME"; // @ belgisiz, masalan: bahriyev_english
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  const menu = document.getElementById("menu");
+  const navlinks = document.getElementById("navlinks");
+  menu.addEventListener("click", () => {
+    const opened = navlinks.classList.toggle("open");
+    menu.setAttribute("aria-expanded", String(opened));
+  });
+  navlinks.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+    navlinks.classList.remove("open");
+    menu.setAttribute("aria-expanded", "false");
+  }));
+
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold: 0.12});
+    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+  } else {
+    document.querySelectorAll(".reveal").forEach(el => el.classList.add("visible"));
+  }
+
+  document.getElementById("contactForm").addEventListener("submit", event => {
+    event.preventDefault();
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const message = document.getElementById("message").value.trim() || "Kurslar haqida ma’lumot olmoqchiman.";
+    const text = `Assalomu alaykum! Sayt orqali murojaat.%0AIsm: ${encodeURIComponent(name)}%0ATelefon: ${encodeURIComponent(phone)}%0AXabar: ${encodeURIComponent(message)}`;
+    if (TELEGRAM_USERNAME === "YOUR_TELEGRAM_USERNAME") {
+      document.getElementById("formNote").textContent = "Demo rejimi: kod ichidagi TELEGRAM_USERNAME qiymatini markazning haqiqiy username’i bilan almashtiring.";
+      return;
+    }
+    window.open(`https://t.me/${TELEGRAM_USERNAME}?text=${text}`, "_blank", "noopener,noreferrer");
+  });
+</script>
+</body>
+</html>
